@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Titto Yampa | Técnico Superior en Sistemas Informáticos</title>
+
+    <!-- SEO Meta Tags img-->
+    <meta name="description"
+        content="Portfolio profesional de José Titto Yampa, Técnico Superior en Sistemas Informáticos especializado en desarrollo web, programación y soporte técnico en La Paz, Bolivia.">
+    <meta name="keywords"
+        content="José Titto Yampa, Sistemas Informáticos, Desarrollo Web, Programación, Soporte Técnico, El Alto, La Paz, Bolivia, Digitalización">
+    <meta name="author" content="José Titto Yampa">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Titto Yampa | Técnico en Sistemas Informáticos">
+    <meta property="og:description" content="Portfolio profesional - Desarrollo Web & Soporte Técnico">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
+
+    <!-- HEADER -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-outfit">JT<span
+                    class="text-slate-900 dark:text-white">Yampa</span></a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#inicio"
+                    class="nav-link hover:text-primary-500 font-medium tracking-wide transition-colors">Inicio</a>
+                <a href="#sobre-mi"
+                    class="nav-link hover:text-primary-500 font-medium tracking-wide transition-colors">Sobre Mí</a>
+                <a href="#experiencia"
+                    class="nav-link hover:text-primary-500 font-medium tracking-wide transition-colors">Experiencia</a>
+                <a href="#habilidades"
+                    class="nav-link hover:text-primary-500 font-medium tracking-wide transition-colors">Habilidades</a>
+                <a href="#proyectos"
+                    class="nav-link hover:text-primary-500 font-medium tracking-wide transition-colors">Proyectos</a>
+                <a href="#contacto"
+                    class="px-5 py-2 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-500/30">Contacto</a>
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 transition-colors focus:outline-none">
+                    <span id="theme-toggle-light-icon" class="hidden">🌞</span>
+                    <span id="theme-toggle-dark-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800">🌙</button>
+                <button id="menu-btn" class="text-slate-900 dark:text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden bg-white dark:bg-slate-900 absolute w-full left-0 top-full shadow-lg border-t dark:border-slate-800 transition-all duration-300">
+            <div class="flex flex-col space-y-4 p-6">
+                <a href="#inicio" class="mobile-link">Inicio</a>
+                <a href="#sobre-mi" class="mobile-link">Sobre Mí</a>
+                <a href="#experiencia" class="mobile-link">Experiencia</a>
+                <a href="#habilidades" class="mobile-link">Habilidades</a>
+                <a href="#proyectos" class="mobile-link">Proyectos</a>
+                <a href="#contacto" class="mobile-link font-bold text-primary-600 border-none">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+            <div id="dynamic-bg" class="absolute inset-0 z-0 opacity-10"></div>
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="order-2 md:order-1 reveal-on-scroll">
+                    <span
+                        class="text-primary-600 dark:text-primary-400 font-bold tracking-widest uppercase text-sm block mb-4">Ingeniería
+                        & Soluciones Rápidas</span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight font-outfit">Hola, soy <br><span
+                            class="text-primary-600">José Titto Yampa</span></h1>
+                    <p class="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
+                        Técnico Superior en Sistemas Informáticos especializado en desarrollo web, programación y
+                        soporte técnico. Apasionado por la creación de soluciones tecnológicas innovadoras.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#proyectos"
+                            class="px-8 py-3 bg-primary-600 text-white rounded-lg font-bold hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-500/30 text-center">Ver
+                            Proyectos</a>
+                        <a href="assets/cv/CV_Jose_Titto_Yampa.pdf" download
+                            class="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-bold hover:bg-primary-50 dark:hover:bg-slate-900 transition-all text-center">Descargar
+                            CV</a>
+                    </div>
+                    <div class="mt-8 flex gap-6">
+                        <a href="#" class="text-slate-400 hover:text-primary-600 transition-colors">GitHub</a>
+                        <a href="#" class="text-slate-400 hover:text-primary-600 transition-colors">LinkedIn</a>
+                        <a href="https://wa.me/59174059430" target="_blank"
+                            class="text-slate-400 hover:text-primary-600 transition-colors">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-primary-600 rounded-3xl rotate-6 opacity-20 animate-pulse">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-slate-800 rounded-3xl -rotate-3 overflow-hidden shadow-2xl flex items-center justify-center">
+                            <img src="assets/images/profile-photo.jpg" alt="José Titto Yampa"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="py-24 bg-white dark:bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="reveal-on-scroll">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-8 relative pb-4 inline-block font-outfit">
+                            Perfil Profesional
+                            <span class="absolute bottom-0 left-0 w-16 h-1.5 bg-primary-600 rounded-full"></span>
+                        </h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Técnico Superior en Sistemas Informáticos con sólida formación en desarrollo web,
+                            programación y soporte técnico. Experiencia práctica en digitalización de procesos
+                            administrativos en el sector público.
+                        </p>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+                            Especializado en desarrollo de aplicaciones web con enfoque en crear soluciones eficientes y
+                            escalables. Busco aportar mis conocimientos técnicos para continuar mi crecimiento
+                            profesional en un entorno dinámico.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="p-6 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
+                                <span class="text-primary-600 font-bold block text-2xl">2+</span>
+                                <span class="text-sm text-slate-500">Años de estudio</span>
+                            </div>
+                            <div
+                                class="p-6 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
+                                <span class="text-primary-600 font-bold block text-2xl">10+</span>
+                                <span class="text-sm text-slate-500">Proyectos realizados</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll"
+                        style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-bold mb-8 text-primary-600">Objetivos Profesionales</h3>
+                        <div class="space-y-8">
+                            <div class="flex gap-4 group">
+                                <div
+                                    class="w-12 h-12 bg-primary-600/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary-600 transition-all group-hover:bg-primary-600 group-hover:text-white">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Desarrollo</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Aplicaciones web y sistemas de
+                                        información escalables.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 group">
+                                <div
+                                    class="w-12 h-12 bg-primary-600/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary-600 transition-all group-hover:bg-primary-600 group-hover:text-white">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Soporte</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Mantenimiento preventivo y
+                                        atención al usuario.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 group">
+                                <div
+                                    class="w-12 h-12 bg-primary-600/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary-600 transition-all group-hover:bg-primary-600 group-hover:text-white">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Docencia</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Enseñanza técnica en
+                                        informática y programación.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="py-24 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal-on-scroll">Experiencia Laboral</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative border-l-2 border-primary-600 pl-8 ml-4">
+                        <div class="mb-12 relative reveal-on-scroll">
+                            <div
+                                class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-primary-600 shadow-[0_0_10px_rgba(2,132,199,0.5)]">
+                            </div>
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-4 gap-2">
+                                <div>
+                                    <h3 class="text-2xl font-bold font-outfit">Pasante - Área de Legalizaciones</h3>
+                                    <span class="text-primary-600 font-semibold italic">Servicio Departamental de
+                                        Educación (SEDUCA), La Paz</span>
+                                </div>
+                                <span
+                                    class="bg-primary-100 dark:bg-primary-900/30 text-primary-600 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap">Nov
+                                    2024 - Ene 2025</span>
+                            </div>
+                            <ul class="space-y-3 text-slate-600 dark:text-slate-400 text-base">
+                                <li class="flex gap-2"><span>•</span> Registro y digitalización de trámites en sistema
+                                    institucional.</li>
+                                <li class="flex gap-2"><span>•</span> Organización de documentación bajo normativa del
+                                    Ministerio de Educación.</li>
+                                <li class="flex gap-2"><span>•</span> Atención al usuario y orientación sobre procesos
+                                    documentales.</li>
+                                <li class="flex gap-2"><span>•</span> Control de calidad y validación de expedientes
+                                    académicos.</li>
+                                <li class="flex gap-2"><span>•</span> Manejo de bases de datos para seguimiento masivo
+                                    de trámites.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="py-24 bg-white dark:bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal-on-scroll">Formación Académica</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="skill-card hover:border-primary-600 transition-all duration-300 reveal-on-scroll"
+                        style="transition-delay: 200ms;">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-2">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-outfit">Técnico
+                                    Superior en Sistemas Informáticos</h3>
+                                <p class="text-lg text-primary-600 font-semibold">Instituto Tecnológico Don Bosco, El
+                                    Alto</p>
+                            </div>
+                            <span class="text-slate-500 font-medium">2023 - 2025</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4
+                                    class="font-bold text-slate-900 dark:text-white mb-2 underline decoration-primary-600 decoration-2">
+                                    Especialización:</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Desarrollo de Aplicaciones Web</p>
+                                <h4
+                                    class="font-bold text-slate-900 dark:text-white mt-4 mb-2 underline decoration-primary-600 decoration-2">
+                                    Enfoque:</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Programación escalable y diseño centrado
+                                    en el usuario.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Áreas de estudio:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold">Programación</span>
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold">Bases
+                                        de Datos</span>
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold">Soporte
+                                        Técnico</span>
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold">Redes</span>
+                                    <span
+                                        class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-semibold">Hardware</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="py-24 bg-slate-50 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title reveal-on-scroll">Habilidades Técnicas</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web & Programación -->
+                    <div class="skill-card reveal-on-scroll">
+                        <h3 class="font-bold text-xl mb-6 flex items-center gap-2 font-outfit">💻 Dev & Programación
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1"><span
+                                        class="text-sm font-medium">HTML5/CSS3/JS</span><span
+                                        class="text-xs text-slate-500">90%</span></div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary-600 h-full w-[90%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-sm font-medium">PHP /
+                                        Python</span><span class="text-xs text-slate-500">75%</span></div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary-600 h-full w-[75%]"></div>
+                                </div>
+                            </div>
+                            <p
+                                class="text-[10px] text-slate-500 mt-4 leading-relaxed font-semibold uppercase tracking-tighter">
+                                Tailwind, Bootstrap, Git, VS Code, Agile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bases de Datos -->
+                    <div class="skill-card reveal-on-scroll" style="transition-delay: 100ms;">
+                        <h3 class="font-bold text-xl mb-6 flex items-center gap-2 font-outfit">🗄️ Bases de Datos</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1"><span class="text-sm font-medium">MySQL / SQL
+                                        Server</span><span class="text-xs text-slate-500">85%</span></div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary-600 h-full w-[85%]"></div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-4">Diseño lógico, consultas
+                                complejas y administración básica.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hardware & Soporte -->
+                    <div class="skill-card reveal-on-scroll" style="transition-delay: 200ms;">
+                        <h3 class="font-bold text-xl mb-6 flex items-center gap-2 font-outfit">🛠️ Hardware & Soporte
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1"><span
+                                        class="text-sm font-medium">Mantenimiento</span><span
+                                        class="text-xs text-slate-500">95%</span></div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary-600 h-full w-[95%]"></div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-4">Diagnóstico, reparación y soporte
+                                técnico presencial/remoto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="py-24 bg-white dark:bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div class="reveal-on-scroll">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-outfit">Proyectos Destacados</h2>
+                        <p class="text-slate-600 dark:text-slate-400 max-w-xl">Portafolio de soluciones tecnológicas y
+                            digitalización.</p>
+                    </div>
+                    <div class="flex gap-2 text-sm font-bold reveal-on-scroll" style="transition-delay: 200ms;">
+                        <span
+                            class="text-primary-600 bg-primary-100/50 dark:bg-primary-900/30 px-4 py-2 rounded-full ring-1 ring-primary-600">Disponibilidad
+                            Inmediata ✓</span>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Proyecto 1 -->
+                    <div class="project-card group reveal-on-scroll">
+                        <div
+                            class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <img src="assets/images/projects/project-1.jpg" alt="Proyecto 1"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-outfit">Gestión Administrativa</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed line-clamp-2">
+                                Aplicación web para digitalización de trámites institucionales.</p>
+                            <div class="flex gap-2 mb-6"><span
+                                    class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded font-bold">PHP</span><span
+                                    class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded font-bold">MySQL</span>
+                            </div>
+                            <div class="flex justify-between"><a href="#"
+                                    class="text-primary-600 font-bold text-sm hover:underline">Ver Demo</a><a href="#"
+                                    class="text-slate-500 font-bold text-sm hover:underline">Código</a></div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="project-card group reveal-on-scroll" style="transition-delay: 100ms;">
+                        <div
+                            class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <img src="assets/images/projects/project-2.jpg" alt="Proyecto 2"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 font-outfit">Dashboard de Reportes</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed line-clamp-2">
+                                Visualización de datos estadísticos para toma de decisiones.</p>
+                            <div class="flex gap-2 mb-6"><span
+                                    class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded font-bold">JS</span><span
+                                    class="text-[10px] px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded font-bold">Tailwind</span>
+                            </div>
+                            <div class="flex justify-between"><a href="#"
+                                    class="text-primary-600 font-bold text-sm hover:underline">Ver Demo</a><a href="#"
+                                    class="text-slate-500 font-bold text-sm hover:underline">Código</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
+            <!-- Partículas de fondo sutiles -->
+            <div
+                class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20 dark:opacity-40">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-primary-600 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-10 right-10 w-64 h-64 bg-primary-400 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <h2 class="section-title reveal-on-scroll">Contacto</h2>
+                <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
+
+                    <div class="space-y-12 reveal-on-scroll">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6 font-outfit text-slate-900 dark:text-white">
+                                ¿Tienes un proyecto <br><span class="text-primary-600">en mente?</span></h3>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg max-w-md">
+                                Estoy disponible para nuevos desafíos técnicos, ya sea presencial en La Paz/El Alto o de
+                                forma remota.
+                                Respondo usualmente en menos de 24 horas.
+                            </p>
+                        </div>
+
+                        <div class="grid gap-6">
+                            <!-- Email Card -->
+                            <a href="mailto:jt37357@gmail.com"
+                                class="group p-6 bg-white dark:bg-slate-900 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-6 hover:shadow-xl hover:border-primary-500/30 transition-all">
+                                <div
+                                    class="w-14 h-14 bg-primary-50 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-all">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-sm text-slate-500 dark:text-slate-400 font-medium mb-1">Email</span>
+                                    <span
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary-600 transition-colors">jt37357@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <!-- WhatsApp Card -->
+                            <a href="https://wa.me/59174059430" target="_blank"
+                                class="group p-6 bg-white dark:bg-slate-900 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-6 hover:shadow-xl hover:border-primary-500/30 transition-all">
+                                <div
+                                    class="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all">
+                                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-sm text-slate-500 dark:text-slate-400 font-medium mb-1">WhatsApp</span>
+                                    <span
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-green-600 transition-colors">+591
+                                        74059430</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-white font-bold text-xl mb-2 font-outfit">José Titto Yampa</h3>
+            <p class="mb-6">Técnico Superior en Sistemas Informáticos | Desarrollo Web & Soporte Técnico</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Mí</a>
+                <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+                <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
+            </div>
+            <p class="text-sm border-t border-slate-800 pt-8">&copy; 2025 José Titto Yampa. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 translate-y-10 transition-all duration-300 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Scripts (Static Loading) -->
+    <script src="js/animations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
