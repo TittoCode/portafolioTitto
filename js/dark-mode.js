@@ -1,13 +1,9 @@
-/**
- * Dark Mode - Static Version
- */
 const initDarkMode = () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 
-    // Load initial theme
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
         if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
@@ -50,7 +46,6 @@ const initDarkMode = () => {
     if (themeToggleBtnMobile) themeToggleBtnMobile.onclick = toggleTheme;
 };
 
-// Auto-init for static loading
 if (typeof document !== 'undefined') {
     window.initDarkMode = initDarkMode;
 }

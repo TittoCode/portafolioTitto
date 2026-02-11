@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base Transitions */
 body {
     @apply transition-colors duration-500 font-sans;
 }
 
-/* Custom Utilities */
 @layer components {
     .section-title {
         @apply text-3xl md:text-5xl font-bold mb-16 text-center relative pb-6 font-outfit;
@@ -35,7 +33,6 @@ body {
     }
 }
 
-/* Animations & Scroll Reveal */
 #header.scrolled {
     @apply bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm py-2;
 }
@@ -72,7 +69,6 @@ body {
     transform: translateY(0);
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -85,7 +81,6 @@ body {
     @apply bg-primary-400/50 dark:bg-primary-600/50 rounded-full hover:bg-primary-500;
 }
 
-/* Selection */
 ::selection {
     @apply bg-primary-600/30 text-primary-900 dark:text-primary-100;
 }

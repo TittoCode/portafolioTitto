@@ -1,13 +1,9 @@
-/**
- * Animations - Static Version
- */
 const initAnimations = () => {
     const header = document.getElementById('header');
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const backToTopBtn = document.getElementById('back-to-top');
 
-    // Sticky Header & Scroll Logic
     window.onscroll = () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -24,12 +20,10 @@ const initAnimations = () => {
         }
     };
 
-    // Mobile Menu
     if (menuBtn && mobileMenu) {
         menuBtn.onclick = () => {
             mobileMenu.classList.toggle('hidden');
         };
-        // Close menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.onclick = () => mobileMenu.classList.add('hidden');
         });
@@ -41,7 +35,6 @@ const initAnimations = () => {
         };
     }
 
-    // Intersection Observer for Reveals
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -53,7 +46,6 @@ const initAnimations = () => {
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 };
 
-// Auto-init for static loading
 if (typeof document !== 'undefined') {
     window.initAnimations = initAnimations;
 }
